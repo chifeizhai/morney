@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import React from 'react'
 require('icons/money.svg')
 require('icons/chart.svg')
@@ -18,6 +18,12 @@ const NavWrapper = styled.nav`
         display:flex;
         flex-direction:column;
         align-items:center;
+        &.selected{
+          color:rgb(0,176,234);
+          .icon{
+            fill:rgb(0,176,234);
+          }
+        }
       }
     }
   }
@@ -27,30 +33,30 @@ const Nav = () => {
     <NavWrapper>
       <ul>
         <li>
-          <Link to="/tags">
+          <NavLink to="/tags" activeClassName="selected">
             <svg className="icon">
               <use xlinkHref="#tag" />
             </svg>
               标签页
-              </Link>
+              </NavLink>
         </li>
 
         <li>
-          <Link to="/money">
+          <NavLink to="/money" activeClassName="selected">
             <svg className="icon">
               <use xlinkHref="#money" />
             </svg>
               记账页
-              </Link>
+              </NavLink>
         </li>
 
         <li>
-          <Link to="/statistics">
+          <NavLink to="/statistics" activeClassName="selected">
             <svg className="icon">
               <use xlinkHref="#chart" />
             </svg>
               统计页
-              </Link>
+              </NavLink>
         </li>
       </ul>
     </NavWrapper>
