@@ -6,9 +6,7 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
-import styled from 'styled-components' 
-import Nav from'./components/Nav';
-import Layout from 'components/Layout'
+import Layout from 'components/Layout';
 
 
 function App() {
