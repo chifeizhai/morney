@@ -47,7 +47,7 @@ const CategorySection = styled.section`
   font-size:24px;
   > ul{
     display:flex;
-    background:#c4c4c4;
+    background:rgba(176,196,222,0.8);
     > li{
       width:50%;
       text-align:center;
@@ -57,7 +57,7 @@ const CategorySection = styled.section`
         content:'';
         display:block;
         height:3px;
-        background:#333;
+        background:#6C7B8B;
         position:absolute;
         width:100%;
         bottom:0;
@@ -67,7 +67,60 @@ const CategorySection = styled.section`
   }
 `
 const NumberPadSection = styled.section`
-
+  display:flex;
+  flex-direction:column;
+  > .output{
+    background:#fff;
+    font-size:36px;
+    line-height:72px;
+    text-align:right;
+    padding:0 16px;
+    box-shadow:inset 0 -5px 5px -5px rgba(70,111,227,1),
+               inset 0 5px 5px -5px rgba(70,111,227,1);
+  }
+  > .pad{
+    > button{
+      font-size:18px;
+      border:none;
+      float:left;
+      width:25%;
+      height:64px;
+      &.ok{
+        height:128px;
+        float:right;
+      }
+      &.zero{
+        width:50%;
+      }
+      &:nth-child(1){
+      }
+      &:nth-child(2),
+      &:nth-child(5){
+        background:rgba(176,196,222,0.2);
+      }
+      &:nth-child(3),
+      &:nth-child(6),
+      &:nth-child(9){
+        background:rgba(176,196,222,0.4);
+      }
+      &:nth-child(4),
+      &:nth-child(7),
+      &:nth-child(10){
+        background:rgba(176,196,222,0.6);
+      }
+      &:nth-child(8),
+      &:nth-child(11),
+      &:nth-child(13){
+        background:rgba(176,196,222,0.8);
+      }
+      &:nth-child(12){
+        background:rgba(159,182,205);
+      }
+      &:nth-child(14){
+        background:rgba(176,196,222,1);
+      }
+    } 
+  }
 `
 const TagList = styled.ol`
 
@@ -101,10 +154,10 @@ function Money() {
         </CategorySection>
         
         <NumberPadSection>
-          <div>
+          <div className="output">
             100
           </div>
-          <div>
+          <div className="pad clearfix">
             <button>1</button>
             <button>2</button>
             <button>3</button>
@@ -116,8 +169,8 @@ function Money() {
             <button>7</button>
             <button>8</button>
             <button>9</button>
-            <button>OK</button>
-            <button>0</button>
+            <button className="ok">OK</button>
+            <button className="zero">0</button>
             <button>.</button>
           </div>
         </NumberPadSection>
