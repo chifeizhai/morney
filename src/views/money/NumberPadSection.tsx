@@ -1,60 +1,49 @@
-import styled from 'styled-components';
+import React,{useState} from 'react'
+import {Wrapper} from './NumberPadSection/Wrapper'
+import {generateOutput} from './NumberPadSection/generateOutput'
 
-const NumberPadSection = styled.section`
-  display:flex;
-  flex-direction:column;
-  > .output{
-    background:#fff;
-    font-size:36px;
-    line-height:72px;
-    text-align:right;
-    padding:0 16px;
-    box-shadow:inset 0 -5px 5px -5px rgba(70,111,227,1),
-               inset 0 5px 5px -5px rgba(70,111,227,1);
+const NumberPadSection: React.FunctionComponent = () =>{
+  const [output,_setOutput]=useState('0');
+  const setOutput =(output:string)=>{
+    if(output.length>16){
+      output=output.slice(0,16);
+    }else if(output.length==0){
+      output='0';
+    }
+    _setOutput(output);
   }
-  > .pad{
-    > button{
-      font-size:18px;
-      border:none;
-      float:left;
-      width:25%;
-      height:64px;
-      &.ok{
-        height:128px;
-        float:right;
-      }
-      &.zero{
-        width:50%;
-      }
-      &:nth-child(1){
-      }
-      &:nth-child(2),
-      &:nth-child(5){
-        background:rgba(176,196,222,0.2);
-      }
-      &:nth-child(3),
-      &:nth-child(6),
-      &:nth-child(9){
-        background:rgba(176,196,222,0.4);
-      }
-      &:nth-child(4),
-      &:nth-child(7),
-      &:nth-child(10){
-        background:rgba(176,196,222,0.6);
-      }
-      &:nth-child(8),
-      &:nth-child(11),
-      &:nth-child(13){
-        background:rgba(176,196,222,0.8);
-      }
-      &:nth-child(12){
-        background:rgba(159,182,205);
-      }
-      &:nth-child(14){
-        background:rgba(176,196,222,1);
-      }
-    } 
-  }
-`;
+  const onclickButtonWrapper =(e:React.MouseEvent)=>{
+    const text =(e.target as HTMLButtonElement).textContent;
+    if(text == null){return;}
+    if(text=='OK'){return;}
+    if('0123456789.'.split('').concat(['删除','清空']).indexOf(text)>=0){
+      setOutput(generateOutput(text,output)) ;
+    };
+  };
+
+  return(
+  <Wrapper>
+    <div className="output">
+            {output}
+          </div>
+          <div className="pad clearfix" onClick={onclickButtonWrapper}>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>删除</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>清空</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button className="ok">OK</button>
+            <button className="zero">0</button>
+            <button>.</button>
+          </div>
+  </Wrapper>
+  );
+};
 
 export {NumberPadSection};
