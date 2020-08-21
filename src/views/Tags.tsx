@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Layout from 'components/Layout';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import { useTags } from 'components/useTags';
 require('icons/right.svg')
 
 const TagList=styled.ol`
@@ -36,14 +37,14 @@ const Space=styled.div`
   flex-direction:column;
 `;
 function Tags() {
-  const [tags,setTags] = useState<string[]>(['衣','食','住','行']);
+  const {tags}=useTags()
     return (
       <Layout>
         <TagList>
           {tags.map(tag =>
-            <li key={tag}>
+            <li key={tag.id}>
               <Link to={'/tags/'+tag}>
-                <span className="oneLine">{tag}</span>
+                <span className="oneLine">{tag.name}</span>
                 <svg className="icon">
                   <use xlinkHref="#right" />
                 </svg>
