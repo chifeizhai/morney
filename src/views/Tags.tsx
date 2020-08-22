@@ -3,6 +3,8 @@ import Layout from 'components/Layout';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import { useTags } from 'components/useTags';
+import {Button} from 'components/Botton';
+import {Space} from 'components/Space';
 require('icons/right.svg')
 
 const TagList=styled.ol`
@@ -21,21 +23,8 @@ const TagList=styled.ol`
     }    
   }
 `;
-const Button =styled.button`
-  font-size:18px;
-  border:none;
-  padding:8px 12px;
-  background:#767676;
-  border-radius:4px;
-  color:#fff;
-`;
-const Space=styled.div`
-  padding-top:36px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-`;
+
+
 function Tags() {
   const {tags}=useTags()
     return (
