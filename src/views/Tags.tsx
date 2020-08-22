@@ -27,14 +27,17 @@ const TagList=styled.ol`
 
 function Tags() {
   const {tags}=useTags()
+  const onclickBack=()=>{
+    window.history.back();
+  }
     return (
       <Layout>
         <TagList>
           {tags.map(tag =>
             <li key={tag.id}>
               <Link to={'/tags/'+tag.id}>
-          <span className="oneLine">{tag.id}{tag.name}</span>
-                <svg className="icon">
+          <span className="oneLine">{tag.name}</span>
+                <svg className="icon" onClick={onclickBack}>
                   <use xlinkHref="#right" />
                 </svg>
               </Link>

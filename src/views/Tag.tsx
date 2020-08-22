@@ -68,10 +68,13 @@ const Tag: React.FunctionComponent = () => {
         </Space>
       </div>
   )
+  const onClickBack=()=>{
+    window.history.back()
+  }
   return (
     <Layout>
       <Topbar>
-        <svg className="icon">
+        <svg className="icon" onClick={onClickBack}>
           <use xlinkHref="#left" />
         </svg>
         <span>编辑标签</span>
