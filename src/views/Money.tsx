@@ -9,7 +9,6 @@ import {NumberPadSection} from './money/NumberPadSection';
 const MyLayout =styled(Layout)`
   display:flex;
   flex-direction:column;
-
 `
 
 function Money() {
