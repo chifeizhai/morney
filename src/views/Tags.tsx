@@ -26,7 +26,7 @@ const TagList=styled.ol`
 
 
 function Tags() {
-  const {tags}=useTags()
+  const {tags,addTag}=useTags()
   const onclickBack=()=>{
     window.history.back();
   }
@@ -45,7 +45,7 @@ function Tags() {
           )}
         </TagList>
         <Space>
-          <Button>新建标签</Button>
+          <Button onClick={addTag}>新建标签</Button>
         </Space>
       </Layout>
     );
