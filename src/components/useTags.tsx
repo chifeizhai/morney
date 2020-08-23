@@ -1,9 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 import { createId } from 'lib/createId';
 
-const defaultTags =[
-    
-]
 const useTags=()=>{
     const [tags,setTags] = useState<{id:number;name:string}[]>([]);
     useEffect(()=>{
