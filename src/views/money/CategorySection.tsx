@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
+
 const Wrapper = styled.section`
   font-size:24px;
   > ul{
     display:flex;
-    background:rgba(176,196,222,0.8);
     > li{
       width:50%;
       text-align:center;
@@ -23,10 +23,12 @@ const Wrapper = styled.section`
     }
   }
 `;
+
 type Props={
   value:'-'|'+',
   onChange:(value:'-'|'+')=>void;
 }
+
 const CategorySection: React.FunctionComponent<Props> = (props) => {
   const categoryMap = { '-': '支出', '+': '收入' };
   const [categoryList] = useState<('+' | '-')[]>(['-', '+']);
@@ -45,4 +47,5 @@ const CategorySection: React.FunctionComponent<Props> = (props) => {
     </Wrapper>
   );
 };
+
 export {CategorySection};
