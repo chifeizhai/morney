@@ -10,7 +10,7 @@ const generateOutput = (text:string,output='0') => {
         case '7':
         case '8':
         case '9':
-            if (output == '0') {
+            if (output === '0') {
                 return text;
             } else {
                 return output + text;
@@ -19,7 +19,7 @@ const generateOutput = (text:string,output='0') => {
             if (output.indexOf('.') >= 0) { return output; }
             return output + '.';
         case '删除':
-            if (output.length == 1) {
+            if (output.length === 1) {
                 return '';
             } else {
                 return output.slice(0, output.length - 1)||'';

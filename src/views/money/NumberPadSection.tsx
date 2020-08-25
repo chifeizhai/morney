@@ -12,7 +12,7 @@ const NumberPadSection: React.FunctionComponent<Props> = (props) =>{
     let newOutput:string
     if(output.length>16){
       newOutput=output.slice(0,16);
-    }else if(output.length==0){
+    }else if(output.length===0){
       newOutput='0';
     }else{
       newOutput=output
@@ -23,7 +23,7 @@ const NumberPadSection: React.FunctionComponent<Props> = (props) =>{
   const onclickButtonWrapper =(e:React.MouseEvent)=>{
     const text =(e.target as HTMLButtonElement).textContent;
     if(text == null){return;}
-    if(text=='OK'){
+    if(text==='OK'){
       if(props.onOK){props.onOK();}      
       return;}
     if('0123456789.'.split('').concat(['删除','清空']).indexOf(text)>=0){

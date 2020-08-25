@@ -23,7 +23,7 @@ const useRecords=()=>{
             alert('请先输入金额^ ^')
             return false
         }
-        if(newrecord.tagIds.length==0){
+        if(newrecord.tagIds.length===0){
             alert('请选择一个标签^ ^')
             return false
         }

@@ -39,9 +39,9 @@ function Statistics() {
   const { records } = useRecords();
   const { getName } = useTags()
   const hash: { [K: string]: RecordItem[] } = {};
-  const selectedRedcords = records.filter(r => r.category == category);
+  const selectedRedcords = records.filter(r => r.category === category);
 
-  selectedRedcords.map(r => {
+  selectedRedcords.forEach(r => {
     const key = day(r.createdAt).format('YYYY年MM月DD日');
     if (!(key in hash)) {
       hash[key] = [];
@@ -50,7 +50,7 @@ function Statistics() {
   });
 
   const array = Object.entries(hash).sort((a, b) => {
-    if (a[0] == b[0]) return 0;
+    if (a[0] === b[0]) return 0;
     if (a[0] > b[0]) return -1;
     if (a[0] < b[0]) return 1;
     return 0;

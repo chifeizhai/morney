@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTags } from 'components/useTags';
 import { useParams } from 'react-router-dom';
 import Layout from 'components/Layout';
