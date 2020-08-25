@@ -24,6 +24,9 @@ function App() {
           <Route path="/tags/:id" exact={true}>
             <Tag />
           </Route>
+          <Route path="/Statistic/:id" exact={true}>
+            <Tag />
+          </Route>
           <Route path="/tags" exact={true}>
             <Tags />
           </Route>

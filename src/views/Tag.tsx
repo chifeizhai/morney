@@ -7,6 +7,13 @@ import styled from 'styled-components';
 import { Space } from 'components/Space';
 require('icons/left.svg');
 
+const Button1 = styled(Button)`
+  background:#E23637;
+`
+const H3=styled.h3`
+  text-align:center;
+  margin-top:50px;
+`
 const Topbar = styled.header`
   display:flex;
   justify-content:space-between;
@@ -64,7 +71,7 @@ const Tag: React.FunctionComponent = () => {
           updateTag(tag.id, { name: e.target.value });
         }} />
       <Space>
-        <Button onClick={() => deleteTag(tag.id)}>删除标签</Button>
+        <Button1 onClick={() => deleteTag(tag.id)}>删除标签</Button1>
       </Space>
     </div>
   )
@@ -82,7 +89,13 @@ const Tag: React.FunctionComponent = () => {
           <use xlinkHref="#undefined" />
         </svg>
       </Topbar>
-      {tag ? tagContent(tag) : <div>标签删除成功！</div>}
+      {tag ? tagContent(tag) :
+        <div>
+          <H3>标签删除成功！</H3>
+          <Space>
+            <Button onClick={onClickBack}>点击返回</Button>
+          </Space>
+        </div>}
     </Layout>
   );
 

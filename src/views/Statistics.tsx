@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { useRecords, RecordItem } from 'components/useUpdate';
 import { useTags } from 'components/useTags';
 import day from 'dayjs';
+import { Link } from 'react-router-dom';
 
 
 const Item = styled.div`
