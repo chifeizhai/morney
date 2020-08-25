@@ -54,21 +54,21 @@ const Laber: React.FunctionComponent<Props> = (props) => {
 };
 
 const Tag: React.FunctionComponent = () => {
-  const { findTag, updateTag,deleteTag } = useTags()
+  const { findTag, updateTag, deleteTag } = useTags()
   let { id } = useParams();
   const tag = findTag(parseInt(id))
-  const tagContent=(tag:{id:number;name:string})=>(
+  const tagContent = (tag: { id: number; name: string }) => (
     <div>
-        <Laber value={tag.name}
-          onChange={(e) => {
-            updateTag(tag.id, { name: e.target.value });
-          }} />
-        <Space>
-          <Button onClick={() => deleteTag(tag.id)}>删除标签</Button>
-        </Space>
-      </div>
+      <Laber value={tag.name}
+        onChange={(e) => {
+          updateTag(tag.id, { name: e.target.value });
+        }} />
+      <Space>
+        <Button onClick={() => deleteTag(tag.id)}>删除标签</Button>
+      </Space>
+    </div>
   )
-  const onClickBack=()=>{
+  const onClickBack = () => {
     window.history.back()
   }
   return (
@@ -82,10 +82,7 @@ const Tag: React.FunctionComponent = () => {
           <use xlinkHref="#undefined" />
         </svg>
       </Topbar>
-
-      {tag ? tagContent(tag): <div>tag 不存在</div>}
-
-
+      {tag ? tagContent(tag) : <div>标签删除成功！</div>}
     </Layout>
   );
 

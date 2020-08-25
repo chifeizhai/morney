@@ -54,6 +54,14 @@ const Wrapper = styled.section`
         background:rgba(176,196,222,1);
       }
     } 
+    @media (max-height:570px){
+        >button{
+          height:45px;
+          &.ok{
+            height:90px;
+          }
+        }
+      }
   }
 `;
 

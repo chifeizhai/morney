@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from 'components/Layout';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTags } from 'components/useTags';
-import {Button} from 'components/Botton';
-import {Space} from 'components/Space';
+import { Button } from 'components/Botton';
+import { Space } from 'components/Space';
 require('icons/right.svg')
 
-const TagList=styled.ol`
+const TagList = styled.ol`
   font-size:16px;
   background:#fff;
   >li{
@@ -26,29 +26,29 @@ const TagList=styled.ol`
 
 
 function Tags() {
-  const {tags,addTag}=useTags()
-  const onclickBack=()=>{
+  const { tags, addTag } = useTags()
+  const onclickBack = () => {
     window.history.back();
   }
-    return (
-      <Layout>
-        <TagList>
-          {tags.map(tag =>
-            <li key={tag.id}>
-              <Link to={'/tags/'+tag.id}>
-          <span className="oneLine">{tag.name}</span>
-                <svg className="icon" onClick={onclickBack}>
-                  <use xlinkHref="#right" />
-                </svg>
-              </Link>
-            </li>
-          )}
-        </TagList>
-        <Space>
-          <Button onClick={addTag}>新建标签</Button>
-        </Space>
-      </Layout>
-    );
+  return (
+    <Layout>
+      <TagList>
+        {tags.map(tag =>
+          <li key={tag.id}>
+            <Link to={'/tags/' + tag.id}>
+              <span className="oneLine">{tag.name}</span>
+              <svg className="icon" onClick={onclickBack}>
+                <use xlinkHref="#right" />
+              </svg>
+            </Link>
+          </li>
+        )}
+      </TagList>
+      <Space>
+        <Button onClick={addTag}>新建标签</Button>
+      </Space>
+    </Layout>
+  );
 }
 
 export default Tags;

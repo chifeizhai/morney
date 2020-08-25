@@ -5,12 +5,13 @@ const useTags=()=>{
     const [tags,setTags] = useState<{id:number;name:string}[]>([]);
     useEffect(()=>{
         let localTags=JSON.parse(window.localStorage.getItem('tags')||'[]')
-        if(localTags===0){
+        if(localTags==0){
             localTags=[
                 { id: createId(), name: '衣' },
                 { id: createId(), name: '食' },
                 { id: createId(), name: '住' },
                 { id: createId(), name: '行' },
+                { id: createId(), name: '工资' },
             ];
         }
         setTags(localTags);
