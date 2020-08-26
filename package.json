@@ -1,6 +1,7 @@
 {
   "name": "morney",
   "version": "0.1.0",
+  "homepage": "https://chifeizhai.github.io/morney/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
