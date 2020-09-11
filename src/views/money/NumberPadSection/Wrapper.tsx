@@ -19,6 +19,7 @@ const Wrapper = styled.section`
       float:left;
       width:25%;
       height:64px;
+      box-shadow:inset 1px 1px 1px 1px rgba(255,255,255,0.5);
       &.ok{
         height:128px;
         float:right;
@@ -61,6 +62,9 @@ const Wrapper = styled.section`
             height:90px;
           }
         }
+      }
+      >button:active{
+        background:#FFF;
       }
   }
 `;

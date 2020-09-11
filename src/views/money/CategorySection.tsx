@@ -6,6 +6,7 @@ const Wrapper = styled.section`
   > ul{
     display:flex;
     > li{
+      box-shadow:inset 2px 2px 2px 1px rgba(255,255,255,0.3);
       width:50%;
       text-align:center;
       padding:16px 0;
